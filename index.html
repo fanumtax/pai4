@@ -1,20 +1,54 @@
 <html>
-    <div align="center">
-    <img width="500" height="420" src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/pictures/picture-94e7ee0436c89ef53a4c426e638f178b_5f9c21b032860.jpg?1604067760">
-    
-    <button  onclick="toggleImg()" style="font-size:30px">Click - Es un monke?</button>
-    
-    <img id="pai" style="visibility:hidden" width="500" height="420" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa4XGhXogd7OKh_LO-94YaUmYd0AlWGuJptIf8VJYV&s">
-    </div>
+    <div style="display:none" class="bg" id="sus"></div>
+    <div align="center" style="position:relative">
+    <img id="ayush" width="500" height="420" src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/pictures/picture-94e7ee0436c89ef53a4c426e638f178b_5f9c21b032860.jpg?1604067760">
+     <img id="pai" style="visibility:hidden" width="500" height="420" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa4XGhXogd7OKh_LO-94YaUmYd0AlWGuJptIf8VJYV&s">
+
+    <button id="button1"  onclick="toggleImg()" style="font-size:30px">Click - Es un mono?</button>
+    <button id="button2" style="visibility:hidden; font-size:30px"  onclick="jumpscare()">Continue </button>
+
+
+     </div>
     
   <audio id="audio" src="fart.mp3"></audio>
-    
+  
+  <style>
+      .bg {
+  /* The image used */
+  background-image: url("pai.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index:5;
+}
+  </style>
+  
     <script>
         function toggleImg(){
             var img = document.getElementById('pai');
             img.style.visibility = "visible";
+            var button1 = document.getElementById('button1')
+            button1.style.visibility = "hidden"
+            var button2 = document.getElementById('button2')
+            button2.style.visibility = "visible"
             var audio = document.getElementById("audio");
         	audio.play();
+        }
+        
+        function jumpscare() {
+            var button2 = document.getElementById('button2')
+            button2.style.visibility = "hidden"
+            var img = document.getElementById('pai');
+            img.style.visibility = "hidden";
+            var ayush = document.getElementById('ayush')
+            ayush.style.visibility = "hidden";
+            var sus = document.getElementById("sus");
+            sus.style.display = "block";
         }
     </script>
 </html>
